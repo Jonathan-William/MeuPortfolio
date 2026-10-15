@@ -54,21 +54,6 @@ Depois, abra `http://localhost:5180`.
 > [!TIP]
 > A tela de boot aparece **uma vez por sessão** do navegador. Para vê-la de novo, abra uma aba anônima.
 
-## `$ tree -L 2`
-
-```console
-MeuPortfolio/
-├── index.html          # estrutura e textos em português
-├── style.css           # tokens de cor, layout, animações e responsivo
-├── script.js           # boot, partículas, scroll, terminal, palette, i18n
-├── config.js           # dados pessoais, terminal, EmailJS e tradução EN
-└── assets/
-    ├── avatar.webp     # personagem do hero
-    ├── readme-banner.webp
-    ├── favicon.svg
-    └── icons/          # ícones próprios (ex.: cybersec.svg)
-```
-
 ## `$ lsmod | grep features`
 
 | Módulo | O que faz |
