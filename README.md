@@ -109,25 +109,6 @@ permissão concedida.
 | Ícones da stack | `data-icon` (nome no [devicon](https://devicon.dev/)) ou `data-icon-src` (arquivo próprio) |
 | Personagem | `assets/avatar.webp` (fundo transparente) |
 
-## `$ systemctl status emailjs`
-
-```diff
-- ● emailjs.service — envio direto do formulário
--    Active: inactive (dead)  aguardando configuração
-```
-
-Hoje, "Enviar mensagem" abre o app de e-mail do visitante com a mensagem pronta para `williamjonathan977@gmail.com`. Para o envio ir direto para o Gmail:
-
-1. Crie uma conta gratuita em [emailjs.com](https://www.emailjs.com/). O plano grátis dá 200 e-mails por mês.
-2. Em **Email Services**, conecte o Gmail e anote o **Service ID**.
-3. Em **Email Templates**, crie um modelo com `{{name}}`, `{{email}}`, `{{subject}}`, `{{message}}` e `{{time}}`. Anote o **Template ID**.
-4. Em **Account → API Keys**, copie a **Public Key**.
-5. Preencha no `config.js`:
-   ```js
-   emailjs: { publicKey: 'SUA_PUBLIC_KEY', serviceId: 'SEU_SERVICE_ID', templateId: 'SEU_TEMPLATE_ID' },
-   ```
-6. No painel do EmailJS, restrinja o envio ao domínio onde o site for publicado.
-
 ## `$ cat CREDITS`
 
 Layout e animações inspirados no portfólio de [Lohane](https://llohs.github.io/llohs-dev/), reimplementados do zero com paleta, conteúdo e personagem próprios.
