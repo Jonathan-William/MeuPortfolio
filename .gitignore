@@ -1,0 +1,18 @@
+# configuração local do editor / assistente
+.claude/
+
+# anotações internas (análise da referência) — ficam só no computador
+docs/
+
+# segredos e credenciais, caso algum dia existam
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials*.json
+
+# sistema e dependências
+.DS_Store
+Thumbs.db
+node_modules/

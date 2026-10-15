@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonathan % Dev Log</title>
+    <meta name="description" content="Portfólio de Jonathan — desenvolvimento full stack e cibersegurança." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("portfolioTheme"); } catch (e) {}
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+    <div id="boot" class="boot" aria-hidden="true">
+      <div class="boot-log" id="bootLog"></div>
+    </div>
+
+    <a class="skip-link" href="#about">Pular para o conteúdo</a>
+
+    <nav id="nav">
+      <a href="#hero" class="brand" data-i18n="brand">JONATHAN.DEV</a>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="navlinks" id="navLinks">
+        <a href="#about" data-i18n="nav.about">SOBRE</a>
+        <a href="#projects" data-i18n="nav.projects">PROJETOS</a>
+        <a href="#lab" data-i18n="nav.lab">SEGURANÇA</a>
+        <a href="#stack" data-i18n="nav.stack">STACK</a>
+        <a href="#cv" data-i18n="nav.cv">CURRÍCULO</a>
+        <a href="#contact" data-i18n="nav.contact">CONTATO</a>
+
+        <div class="nav-controls-mobile">
+          <button class="icon-btn js-theme" type="button" data-i18n-aria="controls.theme" aria-label="Alternar tema claro/escuro">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+          <button class="icon-btn js-lang" type="button" data-i18n-aria="controls.lang" aria-label="Mudar idioma">
+            <span class="lang-label">EN</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <button class="icon-btn js-theme" type="button" data-i18n-aria="controls.theme" aria-label="Alternar tema claro/escuro">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="icon-btn js-lang" type="button" data-i18n-aria="controls.lang" aria-label="Mudar idioma">
+          <span class="lang-label">EN</span>
+        </button>
+        <div class="status-badge">
+          <span class="dot"></span><span data-i18n="nav.status">OPEN TO WORK</span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="hero">
+        <div>
+          <div class="eyebrow" data-i18n="hero.eyebrow">FULL STACK • CIBERSEGURANÇA • API REST</div>
+          <h1 class="glitch" data-text="DEVELOPER FULL STACK & CYBER" data-i18n="hero.title">
+            DEVELOPER FULL STACK<br /><span class="hl">&amp; CYBER</span>
+          </h1>
+          <p class="lead" data-i18n="hero.lead">
+            Interfaces, APIs e ferramentas de segurança — projetadas entre estágio, faculdade e curiosidade com o mundo do cyber.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn fill" data-i18n="hero.ctaProjects">VER PROJETOS →</a>
+            <a href="#cv" class="btn ghost" data-i18n="hero.ctaCv">&gt;_ ABRIR CURRÍCULO</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-shapes" aria-hidden="true">
+            <span class="shape circle-lg"></span>
+            <span class="shape circle-sm"></span>
+            <span class="shape ring"></span>
+            <span class="shape square"></span>
+            <span class="shape blob"></span>
+            <span class="shape dot d1"></span>
+            <span class="shape dot d2"></span>
+            <span class="shape dot d3"></span>
+          </div>
+          <img src="assets/avatar.webp" alt="Ilustração do autor: personagem de óculos e jaqueta vermelha" class="hero-img" width="438" height="960" />
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-inner">
+          <div class="eyebrow-row">
+            <span data-i18n="about.eyebrowLeft">/* um pouco sobre mim */</span>
+            <span data-i18n="about.eyebrowRight">quem está por trás do código</span>
+          </div>
+          <h2 data-i18n="about.heading">Quem está por trás do código.</h2>
+
+          <div class="about-grid reveal">
+            <div class="about-text">
+              <p data-i18n="about.p1">
+                Sou <b>Jonathan</b>, tenho 20 anos e estou em formação em
+                <span class="hl-word">Análise e Desenvolvimento de Sistemas</span>, gosto de aprender na prática,
+                não só em tutoriais.
+              </p>
+              <p data-i18n="about.p2">
+                Atualmente estagiário de tecnologia na <span class="hl-word">Liberty Pay</span>, onde aplico na prática
+                o suporte técnico no dia a dia, além de estruturação de redes, configurações e criação de sistemas.
+              </p>
+              <p data-i18n="about.p3">
+                Também mergulho fundo em <span class="hl-word">cibersegurança</span>, porque entender como as coisas
+                quebram é a melhor forma de aprender a construí-las melhor.
+              </p>
+              <p data-i18n="about.p4">
+                Com <span class="hl-word">curiosidade</span> como motor, código como ferramenta e muito Monster como
+                combustível.
+              </p>
+
+              <div class="about-tags">
+                <span class="about-tag">React</span>
+                <span class="about-tag">Node.js</span>
+                <span class="about-tag">TypeScript</span>
+                <span class="about-tag">Python</span>
+                <span class="about-tag">CyberSec</span>
+                <span class="about-tag">Linux</span>
+              </div>
+            </div>
+
+            <div class="about-stats">
+              <div class="about-stat">
+                <div class="about-stat-k">years_of_study</div>
+                <div class="about-stat-v">1+</div>
+                <div class="about-stat-label" data-i18n="about.statYears">ANOS ESTUDANDO</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-k">projects_built</div>
+                <div class="about-stat-v">2</div>
+                <div class="about-stat-label" data-i18n="about.statProjects">PROJETOS REAIS ATÉ AGORA</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-k">tech_stacks</div>
+                <div class="about-stat-v">11</div>
+                <div class="about-stat-label" data-i18n="about.statStacks">STACKS</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-k">games_played</div>
+                <div class="about-stat-v">∞</div>
+                <div class="about-stat-label" data-i18n="about.statFun">JOGOS JOGADOS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-cut" aria-hidden="true"></div>
+
+      <section id="projects">
+        <div class="section-inner reveal">
+          <div class="eyebrow-row">
+            <span data-i18n="projects.eyebrowLeft">/* projetos que construí */</span>
+            <span><span id="projCount">0</span> <span data-i18n="projects.total">no total</span></span>
+          </div>
+          <h2 data-i18n="projects.heading">Em construção. Literalmente.</h2>
+          <p class="desc" data-i18n="projects.desc">Os projetos ainda estão compilando. Enquanto isso, aproveite estes cards 100% livres de bugs — afinal, não têm nenhuma linha de código.</p>
+
+          <div class="filter-row reveal" id="filterRow" role="group" aria-label="Filtrar projetos">
+            <button class="filter-chip active" data-filter="ALL" aria-pressed="true" data-i18n="projects.filterAll">TODOS</button>
+          </div>
+        </div>
+
+        <div class="proj-grid" id="projGrid">
+          <article class="proj-item reveal tilt" data-tag="LOADING" data-fun>
+            <div class="top-row"><h3>projeto_secreto.exe</h3><span class="proj-tag">LOADING</span></div>
+            <div class="tags">Café · Monster · Força de vontade</div>
+            <p data-i18n="projects.fun1">Em desenvolvimento desde que descobri que precisava de um portfólio. Previsão de entrega: logo depois do próximo Monster.</p>
+            <a class="link" href="https://github.com/Jonathan-William" target="_blank" rel="noopener" data-i18n="projects.funLink">Acompanhar no GitHub ↗</a>
+          </article>
+          <article class="proj-item reveal tilt" data-tag="404" data-fun>
+            <div class="top-row"><h3 data-i18n="projects.fun2title">Projeto não encontrado</h3><span class="proj-tag">404</span></div>
+            <div class="tags">git init · git status · git status</div>
+            <p data-i18n="projects.fun2">Você procurou, eu procurei, até o Git procurou. Por enquanto, o repositório tem um README e muita esperança.</p>
+            <a class="link" href="https://github.com/Jonathan-William" target="_blank" rel="noopener" data-i18n="projects.funLink">Acompanhar no GitHub ↗</a>
+          </article>
+          <article class="proj-item reveal tilt" data-tag="SOON" data-fun>
+            <div class="top-row"><h3>TODO.md</h3><span class="proj-tag">SOON</span></div>
+            <div class="tags">Markdown · Planejamento · Otimismo</div>
+            <p data-i18n="projects.fun3">[x] Ter uma ideia<br>[x] Abrir o VS Code<br>[x] Escolher o tema do editor<br>[ ] Terminar o projeto</p>
+            <a class="link" href="#contact" data-i18n="projects.funContact">Tem uma ideia? Me chama ↗</a>
+          </article>
+        </div>
+        <p class="filter-empty" id="filterEmpty" hidden data-i18n="projects.filterEmpty">
+          Nenhum projeto com essa tag ainda — mas tá vindo por aí.
+        </p>
+      </section>
+
+      <div class="section-cut dark" aria-hidden="true"></div>
+
+      <section id="lab" class="dark-section">
+        <div class="section-inner reveal">
+          <div class="eyebrow-row">
+            <span data-i18n="lab.eyebrowLeft">/* segurança e infraestrutura */</span>
+            <span data-i18n="lab.eyebrowRight">redes · hardening</span>
+          </div>
+          <h2 data-i18n="lab.heading">Quando o front-end silencia, entra a segurança.</h2>
+          <p class="desc" data-i18n="lab.desc">Interesse em computação em nuvem, redes e infraestrutura: TCP/IP, DNS, DHCP, VLANs, firewall e VPN, com prática em análise de tráfego e reconhecimento de ativos.</p>
+
+          <div class="lab-wrap">
+            <div class="terminal" id="terminal">
+              <div class="bar"><span></span><span></span><span></span></div>
+            </div>
+            <div>
+              <div class="cv-block">
+                <h4 data-i18n="lab.toolsHeading">FERRAMENTAS</h4>
+                <div class="chip-list">
+                  <span class="chip">Wireshark</span>
+                  <span class="chip">Nmap</span>
+                  <span class="chip">tcpdump</span>
+                  <span class="chip">Firewall / VPN</span>
+                  <span class="chip">TCP/IP · DNS · DHCP · VLANs</span>
+                </div>
+              </div>
+              <div class="cv-block">
+                <h4 data-i18n="lab.projectsHeading">PROJETOS DA ÁREA</h4>
+                <p class="lab-note" data-i18n="lab.projectsText">Somente em estudo...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-cut" aria-hidden="true"></div>
+
+      <section id="stack">
+        <div class="section-inner reveal">
+          <div class="eyebrow-row">
+            <span data-i18n="stack.eyebrowLeft">/* stack que uso */</span>
+            <span data-i18n="stack.eyebrowRight">linguagens, ferramentas e infra</span>
+          </div>
+          <h2 data-i18n="stack.heading">As tecnologias por trás dos meus projetos.</h2>
+          <p class="desc" data-i18n="stack.desc">De linguagens a infraestrutura — o que uso no dia a dia pra construir, quebrar, consertar e, de vez em quando, colocar no ar. O Monster não aparece na lista, mas é dependência obrigatória.</p>
+
+          <div class="skills-grid">
+            <div class="skill-bars reveal">
+              <p class="skill-legend" data-i18n="stack.legend">
+                Nível de domínio autoavaliado em cada tecnologia (não é cobertura de uso nem certificação).
+              </p>
+              <div class="skill-bar" data-pct="82"><div class="skill-top"><span>▸ JavaScript</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-bar" data-pct="78"><div class="skill-top"><span>▸ React</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-bar" data-pct="80"><div class="skill-top"><span>▸ Node.js</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-bar" data-pct="85"><div class="skill-top"><span>▸ Python</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-bar" data-pct="80"><div class="skill-top"><span data-i18n="stack.db">▸ Banco de Dados</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-bar" data-pct="74"><div class="skill-top"><span>▸ Linux</span><span class="skill-pct"></span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+
+            <div class="skill-icons reveal" id="skillIcons">
+              <div class="skill-icon" data-icon="javascript/javascript-original">JavaScript</div>
+              <div class="skill-icon" data-icon="typescript/typescript-original">TypeScript</div>
+              <div class="skill-icon" data-icon="react/react-original">React</div>
+              <div class="skill-icon" data-icon="nodejs/nodejs-original">Node.js</div>
+              <div class="skill-icon" data-icon="python/python-original">Python</div>
+              <div class="skill-icon" data-icon="postgresql/postgresql-original">PostgreSQL</div>
+              <div class="skill-icon" data-icon="mysql/mysql-original">MySQL</div>
+              <div class="skill-icon" data-icon="docker/docker-original">Docker</div>
+              <div class="skill-icon" data-icon="git/git-original">Git</div>
+              <div class="skill-icon" data-icon="linux/linux-original">Linux</div>
+              <div class="skill-icon" data-icon-src="assets/icons/cybersec.svg">CyberSec</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv">
+        <div class="section-inner">
+          <div class="eyebrow-row">
+            <span data-i18n="cv.eyebrowLeft">/* trajetória */</span>
+            <span data-i18n="cv.eyebrowRight">ADS</span>
+          </div>
+          <h2 data-i18n="cv.heading">Minha jornada até aqui.</h2>
+
+          <div class="trajectory reveal">
+            <div class="traj-item">
+              <span class="traj-dot c-red"></span>
+              <div class="traj-date c-red">2026 — <span data-i18n="cv.now">AGORA</span></div>
+              <div class="traj-title" data-i18n="cv.t1title">Estágio + faculdade na prática</div>
+              <p class="traj-desc" data-i18n="cv.t1desc">Estagiário de TI enquanto curso ADS. O dia a dia ajudando no suporte técnico e auxiliando no hardware, software e sistemas no ambiente empresarial.</p>
+            </div>
+            <div class="traj-item">
+              <span class="traj-dot c-purple"></span>
+              <div class="traj-date c-purple">2025 — 2026</div>
+              <div class="traj-title" data-i18n="cv.t2title">Mergulho em cibersegurança</div>
+              <p class="traj-desc" data-i18n="cv.t2desc">Explorando a área de forma ampla: teoria (OWASP, CVEs, hardening), ferramentas (Wireshark, Nmap) e estudos práticos em redes e infraestrutura.</p>
+            </div>
+            <div class="traj-item">
+              <span class="traj-dot c-blue"></span>
+              <div class="traj-date c-blue">2025</div>
+              <div class="traj-title" data-i18n="cv.t3title">Evolução em desenvolvimento full stack</div>
+              <p class="traj-desc" data-i18n="cv.t3desc">Saindo de projetos simples pra sistemas completos com autenticação, APIs REST e banco de dados relacional. React e Node.js viraram ferramentas do dia a dia.</p>
+            </div>
+          </div>
+
+          <p class="cv-note">
+            <span data-i18n="cv.downloadNote">Quer o currículo completo?</span>
+            <a href="#" target="_blank" rel="noopener" data-i18n="cv.downloadLink">baixar em PDF ↗</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-inner">
+          <div class="eyebrow-row">
+            <span data-i18n="contact.eyebrowLeft">contato</span>
+            <span data-i18n="contact.eyebrowRight">fale comigo</span>
+          </div>
+          <h2 data-i18n="contact.heading">Vamos trabalhar juntos?</h2>
+
+          <div class="contact-grid" id="contactGrid">
+            <div class="contact-left stagger">
+              <p class="contact-intro" data-i18n="contact.intro">
+                Tem um projeto em mente ou quer bater um papo sobre tecnologia? Me manda uma mensagem, respondo o mais breve possível.
+              </p>
+              <a href="mailto:williamjonathan977@gmail.com" class="js-email">✉ williamjonathan977@gmail.com</a>
+              <a href="https://github.com/Jonathan-William" target="_blank" rel="noopener">◐ github.com/Jonathan-William</a>
+              <a href="https://www.linkedin.com/in/jonathan-william-bonifacio/" target="_blank" rel="noopener">◑ linkedin.com/in/jonathan-william-bonifacio</a>
+            </div>
+
+            <form id="contactForm" class="stagger" novalidate>
+              <div class="field">
+                <label for="f-name" data-i18n="contact.name">nome</label>
+                <input id="f-name" type="text" name="name" required data-i18n-placeholder="contact.namePh" placeholder="Seu nome" />
+              </div>
+              <div class="field">
+                <label for="f-email" data-i18n="contact.email">email</label>
+                <input id="f-email" type="email" name="email" required placeholder="seu@email.com" />
+              </div>
+              <div class="field">
+                <label for="f-subject" data-i18n="contact.subject">assunto</label>
+                <input id="f-subject" type="text" name="subject" data-i18n-placeholder="contact.subjectPh" placeholder="Assunto" />
+              </div>
+              <div class="field">
+                <label for="f-message" data-i18n="contact.message">mensagem</label>
+                <textarea id="f-message" name="message" required data-i18n-placeholder="contact.messagePh" placeholder="Sua mensagem..."></textarea>
+              </div>
+              <button type="submit" class="btn fill" data-i18n="contact.send">ENVIAR MENSAGEM</button>
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer data-i18n="footer">JONATHAN % DEV FULL STACK — construindo com curiosidade.</footer>
+
+    <button id="cmdkTrigger" class="cmdk-trigger" aria-label="Abrir terminal (atalho: /)" title="abrir terminal (pressione /)">&gt;_</button>
+
+    <div id="cmdk" class="cmdk" role="dialog" aria-modal="true" aria-label="Terminal de navegação">
+      <div class="cmdk-box">
+        <div class="cmdk-input-row">
+          <span class="cmdk-prompt">$</span>
+          <input id="cmdkInput" type="text" placeholder='digite "help"...' autocomplete="off" aria-label="Comando" />
+        </div>
+        <div class="cmdk-output" id="cmdkOutput" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
