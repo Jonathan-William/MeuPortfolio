@@ -1,17 +1,6 @@
 <div align="center">
 
-```
-┌────────────────────────────────────────────────────────────┐
-│                                                            │
-│      ██╗  ██████╗  ███╗   ██╗                              │
-│      ██║ ██╔═══██╗ ████╗  ██║                              │
-│      ██║ ██║   ██║ ██╔██╗ ██║   JONATHAN.DEV               │
-│ ██   ██║ ██║   ██║ ██║╚██╗██║   full stack & cyber         │
-│ ╚█████╔╝ ╚██████╔╝ ██║ ╚████║                              │
-│  ╚════╝   ╚═════╝  ╚═╝  ╚═══╝   status: OPEN TO WORK ●     │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
+<img src="assets/readme-banner.webp" alt="Pixel art: Jonathan programando num quarto escuro com a cidade em neon vermelho ao fundo e um terminal mostrando whoami: full stack &amp; cyber" width="100%" />
 
 ![HTML5](https://img.shields.io/badge/HTML5-0c0c0c?style=for-the-badge&logo=html5&logoColor=ff3b4a)
 ![CSS3](https://img.shields.io/badge/CSS3-0c0c0c?style=for-the-badge&logo=css3&logoColor=ff3b4a)
@@ -75,6 +64,7 @@ MeuPortfolio/
 ├── config.js           # dados pessoais, terminal, EmailJS e tradução EN
 └── assets/
     ├── avatar.webp     # personagem do hero
+    ├── readme-banner.webp
     ├── favicon.svg
     └── icons/          # ícones próprios (ex.: cybersec.svg)
 ```
